@@ -1,0 +1,132 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+main{
+  flex-grow: 1;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 2rem;
+  margin-top: 0;
+}
+
+body{
+  background-color: #cca280;
+}
+
+header{
+  background-color:  #eceae8;
+  height: 100px;
+  padding: 10px 5%;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+footer {
+  background-color: #eeebe9;
+  text-align: center;
+  font-size: 16px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+}
+
+.foto-inicial {
+  width: 100vw;
+}
+
+
+.centered-img {
+  height: calc(100vh - 119px);
+}
+
+.conteudo{
+  font-size: 70px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  color: #f1ebe6;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  padding-bottom: 120px;
+}
+
+.button {
+  background-color:#d3bead;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 12px;
+  width: 140px;
+  height: 60px;
+
+}
+.food-card {
+  background-color: #A24A33;
+  border: 1px solid #8d99ae;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0px 4px 3px 0px #00000040;
+  transition: box-shadow 0.3s ease-in-out;
+  animation: fadeInUp 0.8s ease-out forwards;
+  border: 2px;
+  align-items: center;
+  padding-bottom: 30px;
+  width: 250px;
+}
+
+.food-image { 
+  object-fit: cover;
+  height: 200px;
+}
+
+.food-card h3 {
+  font-weight: 700;
+  font-size: 16px;
+  color: rgb(0, 0, 0);
+  padding: 10px;
+}
+
+.food-list-container {
+  padding: 26px 20px;
+  max-width: 1020px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;                 
+  row-gap: 40px;                   
+  column-gap: 60px;
+  align-items: flex-start;      
+  justify-content: center;
+}
+
+.food-name {
+  padding-bottom: 10px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;                  
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1;                 
+    transform: translateY(0);  
+  }
+}
+
+@media (max-width: 540px) {
+  .food-list-container {
+  justify-content: center;
+  }
+   .form-group label {
+    font-size: 20px;
+  }
+    .form-container {
+    padding: 25px 20px;
+  }
+}
