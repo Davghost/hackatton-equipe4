@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, g
 import sqlite3
+import base64
 
 DATABASE = 'restaurantes.db'
 app = Flask(__name__)
@@ -36,17 +37,12 @@ def init_db():
                 id INTEGER PRIMARY KEY,
                 restaurante_id INTEGER NOT NULL,
                 name TEXT NOT NULL,
-                carne INTEGER NOT NULL,
-                ovo INTEGER NOT NULL,
+                vegano INTEGER NOT NULL,
+                vegetariano INTEGER NOT NULL,
                 leite INTEGER NOT NULL,
                 gluten INTEGER NOT NULL,
-                frutosdomar INTEGER NOT NULL,
-                alcool INTEGER NOT NULL,
-                amendoim INTEGER NOT NULL,
-                soja INTEGER NOT NULL,
-                nozesoucastanhas INTEGER NOT NULL,
-                acucar INTEGER NOT NULL,
                 foto BLOB,
+                des TEXT NOT NULL,
                 FOREIGN KEY (restaurante_id) REFERENCES restaurantes (id_restaurante)
             )
         """
@@ -67,24 +63,24 @@ init_db()
 def main_page():
     return render_template("index.html")
 
-@app.route("/<restaurante>/cardapio", methods=["POST"])
+@app.route("/cardapio", methods=["POST"])
 def get_data(restaurante):
     # You'll want to add functionality here later
     return f"Cardápio for {restaurante}"
 
-@app.route("/adicionar_restricoes")
-def print_data():
-    return render_template("formulario.html")
-
+@app.route("/<restaurante>/adicionar_restricoes")
+def print_data(restaunrante):
+    nome = restaunrante
+    return render_template("formulario.html", nome=nome)
 
 @app.route("/pegar_comidas", methods=["POST"])
 def pegar_comidas():
-    vegano = request.form.get("vegano")
-    lactose = request.form.get("lactose")
+    lactose = 'lactose' in request.form
     gluten = request.form.get("gluten")
     vegetariano = request.form.get("vegetariano")
     restrictions = list()
-    if vegano:
+    nome = request.form.get("nome")
+    if request.form.get("vegano"):
         restrictions.append(1)
     else:
         restrictions.append(0)
@@ -101,12 +97,35 @@ def pegar_comidas():
     else:
         restrictions.append(0)
 
-    return render_template("cardapio.html", restricoes = restrictions)
+    print(restrictions)
+
+    db = get_db()
+    cursor = db.cursor()
+
+    cursor.execute("SELECT * FROM comidas_restaurantes WHERE name = ?", (nome,))
+    results = cursor.fetchall()
+
+    comidas = list()
+    for row in results:
+        v = row[3]
+        ve = row[4]
+        le = row[5]
+        gu = row[6]
+        image = row[7]
+        des = row[8]
+        base64_img = base64.b64encode(image).decode('utf-8')
+        comidas.append({
+            "description": des,
+            "vegano": v,
+            "vegetariano": ve,
+            "lactose": le,
+            "gluten": gu,
+            "foto": base64_img
+        })
+
+    return render_template("formulario.html", restricoes = restrictions, comidas=comidas)
 
 
-@app.route("/login")
-def login():
-    return render_template("create_account.html")
 
 @app.route("/process_form", methods=["POST"])
 def get_coisas():
@@ -116,7 +135,7 @@ def get_coisas():
     db = get_db()
     cursor = db.cursor()
 
-    cursor.execute("SELECT * FROM restaurantes WHERE email = ?", (email,))
+    cursor.execute("SELECT * FROM comidas_restaurantes WHERE email = ?", (email,))
     results = cursor.fetchall()
 
     print(results)
@@ -124,6 +143,6 @@ def get_coisas():
     if (results[0]["senha"] == senha):
         print("olha la ta certo!")
 
-    return render_template("index.html")
+    return
 if __name__ == "__main__":
     app.run(debug=True)
