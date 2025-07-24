@@ -53,7 +53,16 @@ def init_db():
         # Check if the default user exists before inserting
         cursor.execute("SELECT * FROM restaurantes WHERE email = ?", ("batata",))
         if cursor.fetchone() is None:
-            cursor.execute("INSERT INTO restaurantes (email, senha) VALUES (?, ?)", ("batata", "batata"))
+            cursor.execute("INSERT INTO restaurantes (name, email, senha) VALUES (?, ?, ?)", ("restaurante", "restaurante", "restaurante"))
+
+        name = "/static/assets/images/burger.jpeg"
+
+        with open(name, "rb") as file:
+            blobData = file.read()
+
+        conn.execute(
+            "INSERT INTO comidas_restaurantes (description, foto, name, vegano, vegetariano) VALUES (?,?,?,?,?)", ("hamburger", blobData, "restaurante", 1, 1)
+        )
 
         conn.commit()
 
@@ -81,7 +90,12 @@ def pegar_comidas():
     vegetariano = request.form.get("vegetariano")
     restrictions = list()
     nome = request.form.get("nome")
+    print(nome)
     if request.form.get("vegano"):
+        restrictions.append(1)
+    else:
+        restrictions.append(0)
+    if vegetariano:
         restrictions.append(1)
     else:
         restrictions.append(0)
@@ -90,10 +104,6 @@ def pegar_comidas():
     else:
         restrictions.append(0)
     if gluten:
-        restrictions.append(1)
-    else:
-        restrictions.append(0)
-    if vegetariano:
         restrictions.append(1)
     else:
         restrictions.append(0)
@@ -115,16 +125,26 @@ def pegar_comidas():
         image = row[7]
         des = row[8]
         base64_img = base64.b64encode(image).decode('utf-8')
+
+        if v == restrictions[0]:
+            pass
+        if ve == restrictions[1]:
+            pass
+        if le == restrictions[2]:
+            pass
+        if gu == restrictions[3]:
+            pass
+
         comidas.append({
             "description": des,
             "vegano": v,
             "vegetariano": ve,
             "lactose": le,
             "gluten": gu,
-            "foto": base64_img
+            "image_data": base64_img
         })
 
-    return render_template("formulario.html", restricoes = restrictions, comidas=comidas)
+    return render_template("cardapio.html", restricoes = restrictions, comidas=comidas)
 
 if __name__ == "__main__":
     app.run(debug=True)
