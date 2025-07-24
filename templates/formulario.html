@@ -2,34 +2,31 @@
 {% block title %}Criar um cardápio{% endblock %}
 {% block content %}
 
+<div class="formulario">
+    <h2>Tem restrições?</h2>
 
+     <label>
+    <input type="checkbox" name="Restrições" value="Vegetariano">
+    Vegetariano
+  </label><br>
+  
+  <label>
+    <input type="checkbox" name="Restrições" value="Vegano">
+    Vegano
+  </label><br>
+  
+  <label>
+    <input type="checkbox" name="Restrições" value="Leite">
+    Alergia à leite
+  </label><br>
 
-<div class="body-form">
-    <div class="form-container">
-    <h1>Adicione suas Restrições</h1>
-    <form action="/cardapio" method="post">
-      <label for="name">Nome</label>
-      <input class="input-text" type="text" id="name" name="name" placeholder="Digite seu nome" required>
-
-      <label for="email">E-mail</label>
-      <input class="input-text" type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
-
-      <label for="zap">Seu telefone</label>
-      <input class='input-text' type="tel" id="zap" name="zap" placeholder="Digite seu telefone" required>
-
-  <div class="container">
-    <div class="question">Restrições:</div>
-    <label><input class="input" type="checkbox" name="comidas" value="vegano"> vegano</label>
-    <label><input class="input" type="checkbox" name="comidas" value="vegetariano"> Vegetariano</label>
-    <label><input class="input" type="checkbox" name="comidas" value="leite"> Leite</label>
-    <label><input class="input" type="checkbox" name="comidas" value="glúten"> Glúten</label>
-  </div>
-    <label><input type="checkbox" name="termos" value="term-vall">  Aceito termos e condições</label>
-    </label>
-
-      <button type="submit">Enviar</button>
-    </form>
-  </div>
+  <label>
+    <input type="checkbox" name="Restrições" value="Gluten">
+    Intoerância à glúten
+  </label><br>
 </div>
+
+<button type="submit" class="button"> cardápio Final</button>
+
 
 {% endblock %}
