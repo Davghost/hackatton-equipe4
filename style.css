@@ -80,9 +80,10 @@ footer {
   width: 250px;
 }
 
-.food-image { 
+.food-image > img { 
   object-fit: cover;
   height: 200px;
+  width: 225px;
 }
 
 .food-card h3 {
