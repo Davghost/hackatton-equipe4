@@ -2,7 +2,31 @@
 {% block title %}Criar um cardápio{% endblock %}
 {% block content %}
 
+<div class="formulario">
+    <h2>Tem restrições?</h2>
 
+     <label>
+    <input type="checkbox" name="Restrições" value="Vegetariano">
+    Vegetariano
+  </label><br>
+  
+  <label>
+    <input type="checkbox" name="Restrições" value="Vegano">
+    Vegano
+  </label><br>
+  
+  <label>
+    <input type="checkbox" name="Restrições" value="Leite">
+    Alergia à leite
+  </label><br>
+
+  <label>
+    <input type="checkbox" name="Restrições" value="Gluten">
+    Intoerância à glúten
+  </label><br>
+</div>
+
+<button type="submit" class="button"> cardápio Final</button>
 
 <div class="body-form">
     <div class="form-container">

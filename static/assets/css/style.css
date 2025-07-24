@@ -28,7 +28,7 @@ header{
     gap: 10px;
 }
 footer {
-  background-color: #F4F5F6;
+  background-color: #eeebe9;
   text-align: center;
   font-size: 16px;
   position: fixed;
@@ -46,13 +46,11 @@ footer {
     height: calc(100vh - 119px);
 }
 
-
-.body-form{
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  margin: 0 auto;
-  padding: 0;
-  display: flex;
+.conteudo{
+    font-size: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    color: #f1ebe6;
   justify-content: center;
   align-items: center;
   height: 80vh;
@@ -80,33 +78,18 @@ label {
   margin-bottom: 8px;
   color: #555555;
   font-weight: bold;
+  align-items: flex-end;
+  padding: 20px;
+  padding-bottom: 120px;
 }
 
-.input-text, textarea{
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 15px;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  font-size: 14px;
-}
-
-input:focus, textarea:focus {
-  border-color: #007BFF;
-  outline: none;
-}
-
-button {
-  width: 100%;
-  padding: 10px;
-  background-color: #007BFF;
+.button {
+  background-color:#d3bead;
   color: #ffffff;
-  border: none;
-  border-radius: 4px;
   font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+  border-radius: 12px;
+  width: 140px;
+  height: 60px;
 
 button:hover {
   background-color: #0056b3;
