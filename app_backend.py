@@ -59,9 +59,10 @@ def init_db():
 
 init_db()
 
-@app.route("/")
-def main_page():
-    return render_template("index.html")
+@app.route("/<restaurante>/")
+def hello(restaurante):
+    nome = restaurante
+    return render_template("index.html", nome=nome)
 
 @app.route("/cardapio", methods=["POST"])
 def get_data(restaurante):
@@ -69,8 +70,8 @@ def get_data(restaurante):
     return f"Cardápio for {restaurante}"
 
 @app.route("/<restaurante>/adicionar_restricoes")
-def print_data(restaunrante):
-    nome = restaunrante
+def print_data(restaurante):
+    nome = restaurante
     return render_template("formulario.html", nome=nome)
 
 @app.route("/pegar_comidas", methods=["POST"])
@@ -125,24 +126,5 @@ def pegar_comidas():
 
     return render_template("formulario.html", restricoes = restrictions, comidas=comidas)
 
-
-
-@app.route("/process_form", methods=["POST"])
-def get_coisas():
-    email = request.form.get("email")
-    senha = request.form.get("senha")
-
-    db = get_db()
-    cursor = db.cursor()
-
-    cursor.execute("SELECT * FROM comidas_restaurantes WHERE email = ?", (email,))
-    results = cursor.fetchall()
-
-    print(results)
-
-    if (results[0]["senha"] == senha):
-        print("olha la ta certo!")
-
-    return
 if __name__ == "__main__":
     app.run(debug=True)
