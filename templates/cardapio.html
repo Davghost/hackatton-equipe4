@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+{% block title %}Cardápio Filtrado{% endblock %}
+
+{% block content %}
+<div class="cardapio-pagina">
+    <h2>Cardápio para você:</h2>
+
+    {% if pratos %}
+        <div class="cardapio-container">
+            {% for prato in pratos %}
+            <div class="card">
+                <img src="{{ url_for('static', filename='assets/images/' + prato.imagem) }}" alt="{{ prato.nome }}">
+                <div class="card-body">{{ prato.nome }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Nenhum prato disponível com essas restrições.</p>
+    {% endif %}
+</div>
+{% endblock %}
