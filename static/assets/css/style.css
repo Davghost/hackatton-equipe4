@@ -3,16 +3,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family:Verdana, Geneva, Tahoma, sans-serif
-
 }
 main{
     flex-grow: 1;
-    justify-content: center;
+     justify-content: center;
   align-items: flex-end;
 }
 
 body{
- background-color: #cca280;
+    background-color: #cca280;
 }
 
 header{
@@ -52,81 +51,78 @@ footer {
     display: flex;
     color: #f1ebe6;
   justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  padding-bottom: 120px;
+}
+
+.button {
+  background-color:#d3bead;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 12px;
+  width: 140px;
+  height: 60px;
+  margin-bottom: 30px;
+
+}
+
+.cardapio-pagina {
+    padding: 40px;
+    background-color: #f9f3ef;
+    text-align: center;
+}
+
+.cardapio-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+    width: 220px;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 15px;
+    font-weight: bold;
+    color: #5a4636;
+}
+
+.styleform{
+  display: flex;
+  background-color: #eceae8;
+  justify-content: center;
   align-items: center;
-  height: 80vh;
+  margin-top: 60px ;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.title{
+  font-size: larger;
+  margin-bottom: 30px;
   margin-top: 30px;
 }
 
-.form-container {
-  background: #ffffff;
-  padding: 20px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: 80vh;
-  max-width: 800px;
-}
-
-h1 {
-  text-align: center;
-  color: #333333;
-  margin-bottom: 20px;
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  color: #555555;
-  font-weight: bold;
-  align-items: flex-end;
-  padding: 20px;
-  padding-bottom: 120px;
-}
-
-.button {
-  background-color:#d3bead;
-  color: #ffffff;
-  font-size: 16px;
-  border-radius: 12px;
-  width: 140px;
-  height: 60px;
-
-button:hover {
-  background-color: #0056b3;
-}
-.submit{
-  margin-top: 150px;
-}
-.container, .condition{
-  font-size: 25px;
-}
-
-.foto-inicial {
-    width: 100vw;
-}
-
-
-.centered-img {
-    height: calc(100vh - 119px);
-}
-
-.conteudo{
-    font-size: 70px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    color: #f1ebe6;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 20px;
-  padding-bottom: 120px;
-}
-
-.button {
-  background-color:#d3bead;
-  color: #ffffff;
-  font-size: 16px;
-  border-radius: 12px;
-  width: 140px;
-  height: 60px;
+.check{
+  margin-bottom: 30px;
 
 }
