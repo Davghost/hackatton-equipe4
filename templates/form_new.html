@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block title %}Criar um cardápio{% endblock %}
+{% block content %}
+
+
+
+<div class="body-form">
+    <div class="form-container">
+    <h1>Adicione suas Restrições</h1>
+    <form action="/pegar_comidas" method="POST">
+  <div class="container">
+    <div class="question">Restrições:</div>
+    <label><input class="input" id="vegano" type="checkbox" name="vegano" value="vegano"> Vegano</label>
+    <label><input class="input" id="vegetariano" type="checkbox" name="vegetariano" value="vegetariano"> Vegetariano</label>
+    <label><input class="input" id="lactose" type="checkbox" name="lactose" value="lactose"> Leite</label>
+    <label><input class="input" id="gluten" type="checkbox" name="gluten" value="gluten"> Glúten</label>
+    <input type="hidden" name="nome" value="{{ nome }}">
+  </div>
+    <label><input type="checkbox" name="termos" value="term-vall">  Aceito termos e condições</label>
+    </label>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

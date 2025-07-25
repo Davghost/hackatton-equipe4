@@ -3,18 +3,20 @@
   padding: 0;
   box-sizing: border-box;
   font-family:Verdana, Geneva, Tahoma, sans-serif
+
 }
 main{
     flex-grow: 1;
-     justify-content: center;
+    justify-content: center;
   align-items: flex-end;
 }
 
 body{
-    background-color: #cca280;
+ background-color: #cca280;
 }
 
 header{
+    background-color:  #eceae8;
     background-color:  #eceae8;
     height: 100px;
     padding: 10px 50px;
@@ -31,6 +33,7 @@ header{
     width: auto;
 }
 footer {
+  background-color: #eeebe9;
   background-color: #eeebe9;
   text-align: center;
   font-size: 16px;
@@ -49,6 +52,11 @@ footer {
     height: calc(100vh - 119px);
 }
 
+.conteudo{
+    font-size: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    color: #f1ebe6;
 .conteudo{
     font-size: 70px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -112,6 +120,7 @@ footer {
     font-weight: bold;
     color: #5a4636;
 }
+<<<<<<< HEAD
 
 .styleform{
   display: flex;
@@ -185,4 +194,41 @@ footer {
 
 .food-description {
   margin-bottom: 5px;
+=======
+.submit{
+  margin-top: 150px;
+}
+.container, .condition{
+  font-size: 25px;
+}
+
+.foto-inicial {
+    width: 100vw;
+}
+
+
+.centered-img {
+    height: calc(100vh - 119px);
+}
+
+.conteudo{
+    font-size: 70px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    color: #f1ebe6;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 20px;
+  padding-bottom: 120px;
+}
+
+.button {
+  background-color:#d3bead;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 12px;
+  width: 140px;
+  height: 60px;
+
+>>>>>>> 0bf7ce202fb4b97b66d91f88e2912dc8b97c774a
 }
