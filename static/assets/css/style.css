@@ -18,6 +18,9 @@ header{
     background-color:  #eceae8;
     height: 100px;
     padding: 10px 50px;
+    display: flex;
+    gap: auto;
+    justify-content: space-between;
 
 }
 
@@ -25,6 +28,7 @@ header{
     display: flex;
     align-items: center;
     gap: 10px;
+    width: auto;
 }
 footer {
   background-color: #eeebe9;
@@ -63,9 +67,13 @@ footer {
   border-radius: 12px;
   width: 140px;
   height: 60px;
+  margin-bottom: 30px;
 
 }
-
+.cardapio-container a{
+  text-decoration: none;
+  color: inherit;
+}
 .cardapio-pagina {
     padding: 40px;
     background-color: #f9f3ef;
@@ -103,4 +111,78 @@ footer {
     padding: 15px;
     font-weight: bold;
     color: #5a4636;
+}
+
+.styleform{
+  display: flex;
+  background-color: #eceae8;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px ;
+  margin-bottom: 30px;
+  font-size: 30px;
+}
+
+.title{
+  font-size: larger;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.check{
+  margin-bottom: 30px;
+
+}
+
+.bvoltar{
+  display: flex;
+  justify-content: center ;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.inicio {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.food-details-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 65px;
+  max-width: 1200px;
+  margin: 55px auto;
+  background-color: #f4f5f6;
+  padding: 86px 90px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.food-poster {
+  flex-shrink: 0;
+}
+
+.food-poster img {
+  width: 380px;
+  border-radius: 12px;
+}
+
+.food-details-info h1 {
+  font-size: 46px;
+  margin-bottom: 30px;
+}
+
+.food-details-info p {
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.food-section {
+  margin-bottom: 20px;
+}
+
+.food-description {
+  margin-bottom: 5px;
 }

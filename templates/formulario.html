@@ -1,16 +1,16 @@
 {% extends 'layout.html' %}
 {% block title %}Criar um cardápio{% endblock %}
 {% block content %}
-
+<div class="styleform">
 <form action="{{ url_for('cardapio') }}" method="POST" class="formulario">
-    <h2>Coloque suas Restrições:</h2>
+    <h2 class="title">Tem restrições?</h2>
 
-    <label><input type="checkbox" name="restricoes" value="Vegetariano"> Vegetariano</label><br>
-    <label><input type="checkbox" name="restricoes" value="Vegano"> Vegano</label><br>
-    <label><input type="checkbox" name="restricoes" value="Leite"> Leite</label><br>
-    <label><input type="checkbox" name="restricoes" value="Gluten"> Glúten</label><br><br>
+    <label><input type="checkbox" name="restricoes" value="Vegetariano" class="check"> Vegetariano</label><br>
+    <label><input type="checkbox" name="restricoes" value="Vegano" class="check"> Vegano</label><br>
+    <label><input type="checkbox" name="restricoes" value="Leite" class="check"> Alergia à leite</label><br>
+    <label><input type="checkbox" name="restricoes" value="Gluten"  class="check"> Intolerância à glúten</label><br><br>
 
-    <button type="submit" class="button">Ver Cardápio</button>
+    <button type="submit" class="button" >Ver Cardápio</button>
 </form>
-
+</div>
 {% endblock %}

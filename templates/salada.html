@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+<main>
+            <div class="food-details-container">
+                <div class="food-poster">
+                    <img src="../static/assets/images/salada_vegana.jpg" alt="Salada" style="float: left;">
+                </div>
+                <div class="food-details-info">
+                    <h1 class="food-title">Salada</h1>
+                    <div class="food-section">
+                        <p class="food-description"><strong>Descrição:</strong></p>
+                        <p>Uma combinação nutritiva e cheia de textura perfeita para acompanhar qualquer refeição! 
+                        Feita com alface fresca, cenoura fatiada, brócolis, repolho, cebola e tomate.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="{{url_for('index')}}">
+             <nav class="add-button" style="display: flex; justify-content: center;">
+                <button class="button" aria-label="Cardapio"  >Voltar</button>
+            </nav>
+            </a>
+        </main>
+{% endblock %}

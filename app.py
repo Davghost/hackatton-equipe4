@@ -28,12 +28,22 @@ def cardapio():
         {
             "nome": "Lasanha Sem Gluten",
             "imagem": "lasanha.jpg",
-            "restricoes": ["Leite", "Gluten", "Vegano"]
+            "restricoes": ["Leite", "Gluten", "Vegano", "Vegetariano"]
         },
         {
             "nome": "Hambúrguer Vegano",
             "imagem": "hamburguer_vegano.jpg",
             "restricoes": ["Gluten"]
+        },
+        {
+            "nome": "Pizza Vegetariana",
+            "imagem": "pizza.png",
+            "restricoes": ["Gluten", "Vegano", "Leite"]
+        },
+        {
+            "nome": "Frango",
+            "imagem": "frango.png",
+            "restricoes": ["Vegano","Vegetariano"]
         }
     ]
 
@@ -42,6 +52,10 @@ def cardapio():
         if not any(r in prato["restricoes"] for r in restricoes)
     ]
     return render_template("cardapio.html", pratos=pratos_filtrados, restricoes=restricoes)
+
+@app.route("/salada")
+def salada():
+    return render_template("salada.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
